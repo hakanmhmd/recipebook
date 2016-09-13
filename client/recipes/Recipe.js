@@ -12,7 +12,10 @@ Template.Recipe.events({
     },
     'click .fa-trash': function(){
     	Meteor.call('deleteRecipe', this._id);
-    }
+    },
+    'submit #updateRecipeId': function(event, template) {
+    	template.editMode.set(false);
+    },
 });
 
 Template.Recipe.helpers({
